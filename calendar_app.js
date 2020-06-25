@@ -16,7 +16,7 @@ var yyyy = today.getFullYear();
         mm='0'+mm
     } 
 tomorrow = dd+'/'+mm+'/'+yyyy;
-$("#FechaEntrega").flatpickr({
+document.getElementById("FechaEntrega").flatpickr({
     dateFormat: "d/m/Y",
     minDate: tomorrow,
     enableTime: false,
