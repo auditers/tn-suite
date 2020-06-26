@@ -1,9 +1,11 @@
+/*
 fetch('https://www.auditers.com.ar/app/data.json')
   .then(response => response.json())
   .then(data => {
   	// Do something with your data
   	console.log(data);
   });
+*/
 
 $('.ajax-cart-body').append('<label for="FechaEntrega">Fecha de entrega</label><p>Selecciona una fecha de entrega del pedido</p><input type="date" name="custom[FechaEntrega]" id="FechaEntrega" required="" style="background-color:#FFFFFF"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.2.3/flatpickr.css">');
 
