@@ -1,54 +1,62 @@
-/*
-fetch('https://cdn.jsdelivr.net/gh/auditers/tn-suite@3.0/data.json')
+var url = 'https://cdn.jsdelivr.net/gh/auditers/tn-suite@3.4/data.json';
+
+fetch(url)
   .then(response => response.json())
   .then(data => {
   	// Do something with your data
-  	console.log(data);
-  });
-*/
-/*
-var json = 'https://cdn.jsdelivr.net/gh/auditers/tn-suite@3.0/data.json';
-var data = JSON.parse(json); 
-console.log(data); 
-*/
-var textocustomDate = 'Selecciona una fecha de entrega del pedido';
+  	//console.log(data);
 
-$('.ajax-cart-body').append('<div class="customDateTitle"><p>'+textocustomDate+'</p></div><div class="customDate"></div><label for="FechaEntrega">Fecha de entrega</label><input type="date" name="custom[FechaEntrega]" id="FechaEntrega" required="" style="background-color:#FFFFFF"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.2.3/flatpickr.css">');
+  	var calendar_store = data['calendar'].store;
+  	var calendar_campo = data['calendar'].campo;
+  	var calendar_textocustomDate = data['calendar'].textocustomDate;
+  	var calendar_saturday = data['calendar'].saturday;
+  	var calendar_sunday = data['calendar'].sunday;
+  	var calendar_limiths = data['calendar'].limiths;
 
-var today = new Date();
-var hh = today.getHours();
-if (hh >= 20) {
-  var dd = today.getDate()+2;
-} else {
-  var dd = today.getDate()+1;
-}
-var mm = today.getMonth()+1;
-var yyyy = today.getFullYear();
- if(dd<10){
-        dd='0'+dd
-    } 
-    if(mm<10){
-        mm='0'+mm
-    } 
-tomorrow = dd+'/'+mm+'/'+yyyy;
-document.getElementById("FechaEntrega").flatpickr({
-    dateFormat: "d/m/Y",
-    minDate: tomorrow,
-    enableTime: false,
-    "disable": [
-        function(date) {
-           return (date.getDay() === 0 || date.getDay() === 6);
-        }
-    ],
-    "locale": {
-        firstDayOfWeek: 0,
-        weekdays: {
-          shorthand: ['Do', 'Lu', 'Ma', 'Mi', 'Ju', 'Vi', 'Sa'],
-          longhand: ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'],         
-        }, 
-        months: {
-          shorthand: ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Оct', 'Nov', 'Dic'],
-          longhand: ['Enero', 'Febreo', 'Мarzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
-        },                  
-    },
+	$('.ajax-cart-body').append('<div class="customDateTitle"><p>'+calendar_textocustomDate+'</p></div><div class="customDate"></div><label for="'+calendar_campo+'">Fecha de entrega</label><input type="date" name="custom['+calendar_campo+']" id="'+calendar_campo+'" required="" style="background-color:#FFFFFF"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.2.3/flatpickr.css">');
+
+	var today = new Date();
+	var hh = today.getHours();
+	if (hh >= calendar_limiths) {
+	  var dd = today.getDate()+2;
+	} else {
+	  var dd = today.getDate()+1;
+	}
+	var mm = today.getMonth()+1;
+	var yyyy = today.getFullYear();
+	 if(dd<10){
+	        dd='0'+dd
+	    } 
+	    if(mm<10){
+	        mm='0'+mm
+	    } 
+	tomorrow = dd+'/'+mm+'/'+yyyy;
+	document.getElementById("FechaEntrega").flatpickr({
+	    dateFormat: "d/m/Y",
+	    minDate: tomorrow,
+	    enableTime: false,
+	    "disable": [
+	        function(date) {
+	        	if (calendar_saturday === false && calendar_sunday === true) {
+	        		return (date.getDay() === 6);
+	        	} else if (calendar_sunday === false && calendar_sunday === true) {
+	        		return (date.getDay() === 0);
+	        	} else if (calendar_saturday === false && calendar_sunday === false) {
+	        		return (date.getDay() === 0 || date.getDay() === 6);
+	        	}	        	
+	        }
+	    ],
+	    "locale": {
+	        firstDayOfWeek: 0,
+	        weekdays: {
+	          shorthand: ['Do', 'Lu', 'Ma', 'Mi', 'Ju', 'Vi', 'Sa'],
+	          longhand: ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'],         
+	        }, 
+	        months: {
+	          shorthand: ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Оct', 'Nov', 'Dic'],
+	          longhand: ['Enero', 'Febreo', 'Мarzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
+	        },                  
+	    },
+	});
+
 });
