@@ -1,4 +1,4 @@
-var url = 'https://cdn.jsdelivr.net/gh/auditers/tn-suite@3.7/data.json';
+var url = 'https://cdn.jsdelivr.net/gh/auditers/tn-suite@3.7/fecha_de_entrega/data.json';
 
 fetch(url)
   .then(response => response.json())
