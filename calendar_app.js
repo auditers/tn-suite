@@ -7,7 +7,7 @@ fetch('https://www.auditers.com.ar/app/data.json')
   });
 */
 
-$('.ajax-cart-body').append('<div id="customDate"><label for="FechaEntrega">Fecha de entrega</label><input type="date" name="custom[FechaEntrega]" id="FechaEntrega" required="" style="background-color:#FFFFFF"></div><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.2.3/flatpickr.css">');
+$('.ajax-cart-body').append('<div class="customDate"></div><label for="FechaEntrega">Fecha de entrega</label><input type="date" name="custom[FechaEntrega]" id="FechaEntrega" required="" style="background-color:#FFFFFF"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.2.3/flatpickr.css">');
 
 var today = new Date();
 var hh = today.getHours();
