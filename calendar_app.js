@@ -1,10 +1,15 @@
-
-fetch('https://cdn.jsdelivr.net/gh/auditers/tn-suite@2.6/data.json')
+/*
+fetch('https://cdn.jsdelivr.net/gh/auditers/tn-suite@3.0/data.json')
   .then(response => response.json())
   .then(data => {
   	// Do something with your data
   	console.log(data);
   });
+*/
+
+var json = 'https://cdn.jsdelivr.net/gh/auditers/tn-suite@3.0/data.json';
+var data = JSON.parse(json); 
+console.log(data); 
 
 var textocustomDate = 'Selecciona una fecha de entrega del pedido';
 
