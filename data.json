@@ -1,7 +1,9 @@
 {
-	"store": "123456",
-	"textocustomDate": "Selecciona una fecha de entrega del pedido",
-	"saturday": false,
-	"sunday": false,
-	"limiths": 20
+	"calendar": {
+		"store": "123456",
+		"textocustomDate": "Selecciona una fecha de entrega del pedido",
+		"saturday": false,
+		"sunday": false,
+		"limiths": 20
+	}
 }
