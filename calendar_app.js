@@ -6,11 +6,11 @@ fetch('https://cdn.jsdelivr.net/gh/auditers/tn-suite@3.0/data.json')
   	console.log(data);
   });
 */
-
+/*
 var json = 'https://cdn.jsdelivr.net/gh/auditers/tn-suite@3.0/data.json';
 var data = JSON.parse(json); 
 console.log(data); 
-
+*/
 var textocustomDate = 'Selecciona una fecha de entrega del pedido';
 
 $('.ajax-cart-body').append('<div class="customDateTitle"><p>'+textocustomDate+'</p></div><div class="customDate"></div><label for="FechaEntrega">Fecha de entrega</label><input type="date" name="custom[FechaEntrega]" id="FechaEntrega" required="" style="background-color:#FFFFFF"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.2.3/flatpickr.css">');
