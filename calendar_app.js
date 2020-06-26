@@ -31,7 +31,7 @@ fetch(url)
 	        mm='0'+mm
 	    } 
 	tomorrow = dd+'/'+mm+'/'+yyyy;
-	document.getElementById("FechaEntrega").flatpickr({
+	document.getElementById(calendar_campo).flatpickr({
 	    dateFormat: "d/m/Y",
 	    minDate: tomorrow,
 	    enableTime: false,
