@@ -1,13 +1,14 @@
 
-fetch('https://cdn.jsdelivr.net/gh/auditers/tn-suite@2.5/data.json')
+fetch('https://cdn.jsdelivr.net/gh/auditers/tn-suite@2.6/data.json')
   .then(response => response.json())
   .then(data => {
   	// Do something with your data
   	console.log(data);
   });
 
+var textocustomDate = 'Selecciona una fecha de entrega del pedido';
 
-$('.ajax-cart-body').append('<div class="customDate"></div><label for="FechaEntrega">Fecha de entrega</label><input type="date" name="custom[FechaEntrega]" id="FechaEntrega" required="" style="background-color:#FFFFFF"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.2.3/flatpickr.css">');
+$('.ajax-cart-body').append('<div class="customDateTitle"><p>'+textocustomDate+'</p></div><div class="customDate"></div><label for="FechaEntrega">Fecha de entrega</label><input type="date" name="custom[FechaEntrega]" id="FechaEntrega" required="" style="background-color:#FFFFFF"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.2.3/flatpickr.css">');
 
 var today = new Date();
 var hh = today.getHours();
