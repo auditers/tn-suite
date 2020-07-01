@@ -1,0 +1,11 @@
+{
+	"calendar": {
+		"store": "1038681",
+		"campo": "FechaEntrega",
+    "textocustomCampo": "Fecha de Entrega",
+		"textocustomDate": "Selecciona una fecha de entrega del pedido",
+		"saturday": true,
+		"sunday": true,
+		"limiths": 20
+	}
+}
