@@ -35,6 +35,7 @@ fetch(url)
 	    dateFormat: "d/m/Y",
 	    minDate: tomorrow,
 	    enableTime: false,
+	    allowInput: true,
 	    "disable": [
 	        function(date) {
 	        	if (calendar_saturday === false && calendar_sunday === true) {
@@ -58,10 +59,5 @@ fetch(url)
 	        },                  
 	    },
 	});
-
-	$('.flatpickr-input:visible').on('focus', function () {
-	    $(this).blur()
-	})
-	$('.flatpickr-input:visible').prop('readonly', false)
 
 });
