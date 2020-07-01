@@ -13,7 +13,7 @@ fetch(url)
   	var calendar_sunday = data['calendar'].sunday;
   	var calendar_limiths = data['calendar'].limiths;
 
-	$('.modal-fixed-wrapper-content').append('<div class="customDateTitle"><p>'+calendar_textocustomDate+'</p></div><div class="customDate"></div><label for="'+calendar_campo+'">Fecha de entrega</label><input type="date" name="custom['+calendar_campo+']" id="'+calendar_campo+'" required="" style="background-color:#FFFFFF"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.2.3/flatpickr.css">');
+	$('.modal-fixed-wrapper-content').append('<div class="customDate pb-4"><label for="'+calendar_campo+'" class="form-label">'+calendar_textocustomDate+'</label><input type="date" name="custom['+calendar_campo+']" id="'+calendar_campo+'" required="" class="form-control" style="background-color:#FFFFFF"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.2.3/flatpickr.css"></div>');
 
 	var today = new Date();
 	var hh = today.getHours();
@@ -58,5 +58,10 @@ fetch(url)
 	        },                  
 	    },
 	});
+
+	$('.flatpickr-input:visible').on('focus', function () {
+	    $(this).blur()
+	})
+	$('.flatpickr-input:visible').prop('readonly', false)
 
 });
