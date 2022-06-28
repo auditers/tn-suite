@@ -1,6 +1,6 @@
 {
 	"calendar": {
-		"store": "123456",
+		"store": "1234567",
 		"campo": "FechaEntrega",
 		"textocustomDate": "Selecciona una fecha de entrega del pedido",
 		"saturday": false,
